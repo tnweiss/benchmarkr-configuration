@@ -1,0 +1,44 @@
+{
+    "variables": {
+        "VERSION": "0.0.1"
+    },
+    "tasks": [
+        {
+            "alias": "Check Connection to Remote Elastic",
+            "taskName": "checkElasticConnection",
+            "type": "restTask",
+            "method": "GET",
+            "host": "${ENV:ELASTIC_HOST}",
+            "path": "",
+            "expectedCode": "2XX"
+        },
+        {
+            "alias": "Benchmarkr Index Exists",
+            "taskName": "benchmarkrIndexExists",
+            "type": "restTask",
+            "method": "GET",
+            "host": "${ENV:ELASTIC_HOST}",
+            "path": "benchmarkr-${VAR:VERSION}",
+            "expectedCode": "2XX",
+            "failOk": true
+        },
+        {
+            "alias": "Create Benchmarkr Index",
+            "taskName": "createBenchmarkrIndex",
+            "type": "restTask",
+            "method": "PUT",
+            "data": "${FIL:benchmarkrIndex.json}",
+            "host": "${ENV:ELASTIC_HOST}",
+            "path": "benchmarkr-${VAR:VERSION}",
+            "expectedCode": "2XX"
+        }
+    ],
+    "jobs": [
+        {
+            "jobId": "checkConnection",
+            "tasks": [
+                "checkElasticConnection"
+            ]
+        }
+    ]
+}
