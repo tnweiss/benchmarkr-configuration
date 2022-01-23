@@ -1,0 +1,24 @@
+{
+    "mappings": {
+        "properties": {
+            "Timestamp": {"type": "date", "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"},
+            "Language": {"type": "keyword"},
+            "BenchmarkrVersion": {"type": "version"},
+            "PublishDestination": {"type": "keyword"},
+            "SoftwareVersion": {"type": "keyword"},
+            "OperatingSystem": {"type": "keyword"},
+            "CPUFrequency": {"type": "long"},
+            "CPUThreads": {"type": "short"},
+            "MemoryInstalled": {"type": "long"},
+            "MemoryFrequency": {"type": "long"},
+            "Hostname": {"type": "keyword"},
+            "Success": {"type": "boolean"},
+            "SignificantSuccess": {"type": "boolean"},
+            "LowerBound": {"type": "long"},
+            "UpperBound": {"type": "long"},
+            "Duration": {"type": "long"},
+            "Properties": {"type": "object"},
+            "Description": {"type": "text"}
+        }
+    }
+}
