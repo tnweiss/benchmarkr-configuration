@@ -18,8 +18,7 @@
             "LowerBound": {"type": "long"},
             "UpperBound": {"type": "long"},
             "Duration": {"type": "long"},
-            "Properties": {"type": "object"},
-            "Description": {"type": "text"}
+            "Properties": {"type": "object"}
         }
     }
 }
